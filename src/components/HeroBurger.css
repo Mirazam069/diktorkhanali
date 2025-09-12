@@ -1,0 +1,126 @@
+@import './Fonts.css';
+
+.hero-burger-container {
+  position: fixed;
+  top: 3%;
+  left: 3%;
+  width: 60px;
+  height: 45vh;
+  min-height: 300px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  z-index: 9999;
+
+  /* Animatsiya */
+  transform: translateY(100px);
+  opacity: 0;
+  animation: heroBurgerSlideUp 1s ease forwards;
+}
+
+@keyframes heroBurgerSlideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.hero-social-icons a {
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+  font-family: 'AntonSC';
+
+  /* Iconlar dastlab yashirin */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroIconFadeUp 0.6s ease forwards;
+}
+
+/* Iconlar ketma-ket chiqishi */
+.hero-social-icons a:nth-child(1) { animation-delay: 1s; }
+.hero-social-icons a:nth-child(2) { animation-delay: 1.2s; }
+.hero-social-icons a:nth-child(3) { animation-delay: 1.4s; }
+.hero-social-icons a:nth-child(4) { animation-delay: 1.6s; }
+
+@keyframes heroIconFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-social-icons a:hover {
+  transform: scale(1.5);
+}
+
+/* Tooltip */
+.hero-social-icons .hero-tooltip {
+  position: absolute;
+  left: 70px; /* 🔹 endi yozuv o‘ng tomondan chiqadi */
+  top: 50%;
+  transform: translateY(-50%) translateX(-20px);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 20px;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  padding: 3px 21px;
+}
+
+/* Hover effekti */
+.hero-social-icons a:hover .hero-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Burger tugma */
+.hero-burger-btn {
+  position: absolute;
+  top: -60px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 10000;
+}
+.hero-burger-btn.active {
+  color: #ff3b3b;
+}
+
+/* show/hide holati */
+.hero-social-icons.show {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.hero-social-icons.hide {
+  display: none;
+}
+
+/* Chrome, Safari, Edge uchun */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+@media (max-width: 1000px) {
+  .hero-burger-container{
+    display: none;
+  }
+}

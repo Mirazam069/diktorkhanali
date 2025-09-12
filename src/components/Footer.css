@@ -1,0 +1,39 @@
+:root {
+  --primary:  rgba(255, 0, 0, 0.5);
+  --dark: #0f0f0f;
+  --light: #ffffff;
+  --gray: #aaa;
+}
+
+.footer {
+  background: var(--dark);
+  padding: 20px 15px;
+  text-align: center;
+  color: var(--gray);
+  font-family: 'AntonSC';
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-text {
+  margin-bottom: 8px;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-socials a {
+  color: var(--gray);
+  font-size: 1.3rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-socials a:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}

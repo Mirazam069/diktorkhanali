@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Chrome, Safari, Edge uchun */
+body::-webkit-scrollbar {
+  display: none;
+  background: url(./assets/backgroundBanner.png);
+  width: 100%;
+  z-index: 1;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+

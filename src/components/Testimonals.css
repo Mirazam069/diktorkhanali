@@ -1,0 +1,158 @@
+.testimonials {
+  background: #000;
+  padding: 100px 0;
+  font-family: 'AntonSC';
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* yulduzlar tashqariga chiqmasin */
+}
+
+.testimonials-title {
+  color: #fff;
+  font-size: 40px;
+  margin-bottom: 60px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'AntonSC';
+}
+
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 24px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  flex: 1 1 calc(33.333% - 24px);
+  max-width: 360px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  filter: grayscale(100%); 
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  filter: grayscale(0%); 
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  text-align: left;
+}
+
+.testimonial-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.testimonial-name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'AntonSC';
+  letter-spacing: 0.5px;
+}
+
+.testimonial-date {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.testimonial-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0 0 20px 20px;
+}
+
+/* 📱 Responsive breakpoints */
+
+/* Planshet (2 qator) */
+@media (max-width: 1000px) {
+  .testimonials-container {
+    width: 90%;
+  }
+
+  .testimonial-card {
+    flex: 1 1 calc(50% - 20px);
+    max-width: 100%;
+  }
+
+  .testimonials-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+}
+
+/* Telefon (1 qator) */
+@media (max-width: 600px) {
+  .testimonials-container {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .testimonial-card {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .testimonials-title {
+    font-size: 26px;
+  }
+}
+
+/* Juda kichik telefonlar (iPhone SE va boshqalar) */
+@media (max-width: 400px) {
+  .testimonial-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+
+  .testimonial-name {
+    font-size: 16px;
+  }
+
+  .testimonial-date {
+    font-size: 12px;
+  }
+
+  .testimonial-image {
+    height: 180px;
+  }
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  background-image: radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+    radial-gradient(2px 2px at 40% 70%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 80% 20%, #fff, transparent),
+    radial-gradient(2px 2px at 60% 80%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 75% 40%, #fff, transparent),
+    radial-gradient(2px 2px at 30% 60%, #fff, transparent),
+    radial-gradient(1px 1px at 90% 50%, #fff, transparent);
+  animation: starMove 20s linear infinite;
+  z-index: 0;
+}

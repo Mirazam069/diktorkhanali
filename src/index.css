@@ -1,0 +1,4 @@
+/* Chrome, Safari, Edge uchun */
+body::-webkit-scrollbar {
+  display: none;
+}

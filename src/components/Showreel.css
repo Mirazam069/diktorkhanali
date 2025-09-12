@@ -1,0 +1,131 @@
+@import 'fonts.css'; /* agar fonts.css bor bo'lsa, aks holda importni olib tashlang */
+
+/* --- umumiy konteyner --- */
+.sr-wrap{
+  background: #000;               /* orqa fon — sof qora */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 80px 20px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  
+}
+
+/* sarlavha */
+.sr-title{
+  margin: 0 0 24px 0;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* --- 1140px lik box konteyneri --- */
+.sr-container{
+  width: 1140px;
+  height: 220px;            /* kerak bo'lsa o'zgartiring */
+  display: flex;
+  gap: 12px;                /* bo'sh joylar (3 ta gap) */
+  align-items: stretch;
+  align-content: stretch;
+  box-sizing: border-box;
+  /* konteyner ichidagi to'liq joyni egallaydi (boxlar flex bilan o'zaro joyni taqsimlaydi) */
+}
+
+/* --- har bir box --- */
+/* default: har bir box teng (flex:1) bo'ladi; active bo'lganda o'sha box 300px bo'ladi */
+.sr-box{
+  flex: 1 1 0;              /* standart: boshqa boxlar qolgan joyni teng bo'lib oladi */
+  border: none;
+  background: rgba(255,255,255,0.04); /* ingichka kontrast qora fon ustida */
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: flex 900ms cubic-bezier(.2,.8,.2,1),
+              transform 600ms cubic-bezier(.2,.8,.2,1),
+              box-shadow 600ms ease,
+              background 600ms ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  -webkit-tap-highlight-color: transparent;
+  height: 500px;
+  filter: grayscale(100%);  
+}
+
+/* aktiv bo'lgan (hover/focus) box aniq 300px qiladi; qolganlari qolgan joyni avtomatik oladi */
+.sr-box.active{
+  flex: 0 0 300px;          /* qat'iy 300px */
+  transform: translateY(-8px);
+  box-shadow: 0 22px 48px rgba(0,0,0,0.7);
+  background: rgba(255,255,255,0.06);
+  filter: grayscale(0%); 
+}
+
+/* ichki yozuv */
+.sr-box-inner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* ichki elementlar button bosilishini to'smasin */
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  
+}
+
+.sr-box-index{
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.sr-box-text{
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+}
+
+/* focus uchun aniq ko'rinish (klaviatura uchun) */
+.sr-box:focus{
+  outline: 3px solid rgba(255,255,255,0.06);
+  outline-offset: 2px;
+}
+
+/* Mobil/responsive: ustma-ust joylashuv */
+@media (max-width: 1180px) {
+  .sr-container{
+    width: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 700px){
+  .sr-container{
+    flex-direction: column;
+    height: auto;
+    gap: 14px;
+  }
+
+  .sr-box{
+    width: 100% !important;
+    flex: 0 0 auto;
+    height: 120px;
+  }
+
+  .sr-box.active{
+    height: 220px;
+    transform: translateY(0);
+  }
+}
+
+
+
