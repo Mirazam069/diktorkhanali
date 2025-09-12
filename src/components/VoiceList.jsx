@@ -7,8 +7,8 @@ export default function VoiceList() {
     { title: "Football uchun qilingan ovoz", artist: "Diktor A", src: "/audios/voice1.mp3" },
     { title: "Astral kinosi ovozi", artist: "Diktor B", src: "/audios/voice2.mp3" },
     { title: "Podcast intro", artist: "Diktor C", src: "/audios/voice3.mp3" },
-    { title: "Ovozzi jinnisi eshitib ko'rila", artist: "Diktor D", src: "/audios/voice4.mp3" },
-    { title: "Porno uchun qilingan ovoz", artist: "Diktor D", src: "/audios/voice4.mp3" },
+    { title: "UPG uchun yozilgan ovoz", artist: "Diktor D", src: "/audios/voice4.mp3" },
+    { title: "Agentstva uchun yozilgan ovoz", artist: "Diktor D", src: "/audios/voice4.mp3" },
   ];
 
   const [playingIndex, setPlayingIndex] = useState(null);
