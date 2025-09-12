@@ -27,16 +27,16 @@ const Hero = () => {
     <section className="hero" id="home">
       <div className="hero-voice-box">
         <button className="hero-play-btn" onClick={togglePlay}>
-          {isPlaying ? "⏸" : "▶"}
+          {isPlaying ? <ion-icon name="pause"></ion-icon> : <ion-icon name="play"></ion-icon>}
         </button>
 
         <div className="hero-voice-info">
-          <span className="hero-voice-title">Reklama ovozi</span>
-          <span className="hero-voice-artist">Professional diktor</span>
+          <span className="hero-voice-title">Ovozni eshitib ko'rish</span>
+          <span className="hero-voice-artist">Professional diktorlik xizmati</span>
         </div>
 
         <a href={reklamaAudio } download className="hero-download-btn">
-          ⬇
+          <ion-icon name="arrow-down-circle-outline"></ion-icon>
         </a>
 
         {/* Haqiqiy audio */}
