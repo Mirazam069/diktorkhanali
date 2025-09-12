@@ -202,6 +202,9 @@ a{
   .plan-features li {
     font-size: 16px;
   }
+  .circle2-wrapper{
+    display: none;
+  }
 }
 
 /* Telefon (1 ta box) */
