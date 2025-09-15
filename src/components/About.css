@@ -60,7 +60,7 @@
   /* display: block; */
   border-radius: 20px;
   object-fit: cover;
-  filter: grayscale(90%); 
+  /* filter: grayscale(90%);  */
 }
 
 /* Qora gradient chapdan o‘ngga, yanada kuchli */

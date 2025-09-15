@@ -1,6 +1,7 @@
 import React from "react";
 import "./About.css";
-import sampleVideo from "../assets/video2.MOV"; // videongni shu yerga joylaysan
+import sampleVideo from "../assets/video2.MOV";
+import samplePhoto from '../assets/samplePhoto.jpg' // videongni shu yerga joylaysan
 
 const About = () => {
   return (
@@ -30,7 +31,7 @@ const About = () => {
           <div className="video-wrapper">
             <video
               className="about-video"
-              src={sampleVideo}
+              src={samplePhoto}
               autoPlay
               loop
               muted
